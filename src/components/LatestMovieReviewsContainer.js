@@ -23,7 +23,11 @@ class LatestMovieReviewsContainer extends Component {
             this.setState({ reviews: reviewData.results})})
     }
     render(){
-        return < MovieReviews className ="latest-movie-reviews" reviews = {this.state.reviews}/>
+        return (
+            <div className ="latest-movie-reviews" >
+                < MovieReviews reviews={this.state.reviews}/>)
+            </div>
+        )
     }
 }
 

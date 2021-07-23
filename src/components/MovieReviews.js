@@ -1,11 +1,21 @@
-import React from 'react' 
+import React from 'react'
 
-import Review from './Review'
+const MovieReviews = ({ reviews }) => {
+    return (
+        <div className="review-list">
+            {reviews.map(eachReview)}
+        </div>
+    )
+}
 
-const MovieReviews = ({reviews}) => (
-    <div className = "review-list">
-        {reviews.map(review => < Review key = {review.display_title} publication_date = {review.publication_date} summary_short = {review.summary_short} display_title ={review.display_title}/>)}
-    </div>
-)
+const eachReview = ({display_title, publication_date, summary_short}) =>{
+    return (
+        <ul className = "review" key={display_title}>
+            <li className="display_title">{display_title}</li>
+            <li className="publication_date">{publication_date}</li>
+            <li className="summary_short">{summary_short}</li>
+        </ul>
+    )
+}
 
 export default MovieReviews
