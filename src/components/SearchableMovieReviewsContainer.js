@@ -18,7 +18,9 @@ class SearchableMovieReviewsContainer extends Component {
     fetchInfo = (searchParam) => {
         fetch(`${URL}&query=${searchParam}`)
         .then(resp=>resp.json())
-        .then(data=>console.log(data.results))
+        .then(data=>{
+            this.setState({ reviews: data.results })
+        })
     }
 
     handleSearchChange = (event) => {
@@ -37,6 +39,7 @@ class SearchableMovieReviewsContainer extends Component {
                 <form onSubmit={this.setSearchParams}>
                     <input type="text" placeholder="Search for review" onChange={this.handleSearchChange}></input>
                     <button type="submit">Search</button>
+                    < MovieReviews reviews={this.state.reviews} />
                 </form>
             </div>
             )

@@ -10,7 +10,7 @@ const MovieReviews = ({ reviews }) => {
 
 const eachReview = ({display_title, publication_date, summary_short}) =>{
     return (
-        <ul className = "review" key={display_title}>
+        <ul className = "review" key={display_title+summary_short}>
             <li className="display_title">{display_title}</li>
             <li className="publication_date">{publication_date}</li>
             <li className="summary_short">{summary_short}</li>

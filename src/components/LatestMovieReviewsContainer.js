@@ -27,7 +27,7 @@ class LatestMovieReviewsContainer extends Component {
         return (
             <div className ="latest-movie-reviews" >
                 <button onClick={this.showReviews}>Latest Movie Reviews</button>
-                < MovieReviews key = {this.state.display_title} reviews={this.state.reviews}/>
+                < MovieReviews key = {this.state.summary_short} reviews={this.state.reviews}/>
             </div>
         )
     }
