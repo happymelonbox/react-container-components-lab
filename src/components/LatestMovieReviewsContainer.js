@@ -15,7 +15,7 @@ class LatestMovieReviewsContainer extends Component {
         }
     }
 
-    showReviews = () => {
+    componentDidMount(){
             fetch(URL_NYT)
             .then(resp=>resp.json())
             .then(reviewData => {
@@ -26,7 +26,7 @@ class LatestMovieReviewsContainer extends Component {
     render(){
         return (
             <div className ="latest-movie-reviews" >
-                <button onClick={this.showReviews}>Latest Movie Reviews</button>
+                <h3>Latest Movie Reviews</h3>
                 < MovieReviews key = {this.state.summary_short} reviews={this.state.reviews}/>
             </div>
         )
