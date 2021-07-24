@@ -15,16 +15,18 @@ class LatestMovieReviewsContainer extends Component {
         }
     }
 
-    componentDidMount(){
-        fetch(URL_NYT)
-        .then(resp=>resp.json())
-        .then(reviewData => {
-            console.log(reviewData.results)
-            this.setState({ reviews: reviewData.results})})
-    }
+    showReviews = () => {
+            fetch(URL_NYT)
+            .then(resp=>resp.json())
+            .then(reviewData => {
+                this.setState({ reviews: reviewData.results})
+            })
+        }
+
     render(){
         return (
             <div className ="latest-movie-reviews" >
+                <button onClick={this.showReviews}>Latest Movie Reviews</button>
                 < MovieReviews key = {this.state.display_title} reviews={this.state.reviews}/>
             </div>
         )
